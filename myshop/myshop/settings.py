@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
@@ -133,11 +134,19 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # for storing data in session
 CART_SESSION_ID = 'cart'
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = ''
+
+# Stripe Settings
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51MBxRvD891hBOqlO85wGGkUtKC7bgpXOoEBtaCGXGKhvFGgUUWWi5Md7iujnILrNV48Nw67ydyBZwv9WwknRjesG00tbezYhJv'
+STRIPE_SECRET_KEY = 'sk_test_51MBxRvD891hBOqlO3Letgiw7uIW0JGvTKnIP9p315qODxkA2UY3ewDpGRyyzzlsT8YL9C47nLAlph8cYZMYkbEyu00O2nqkzV6'
+STRIPE_API_VERSION = '2022-11-15'
+
+# for stripe webhook
+STRIPE_WEBHOOK_SECRET = 'whsec_f55f1802bd56c4f2ee349372a3ce4da4b0fd76e1ff990f0024a7cbb370f1ce15'
 
